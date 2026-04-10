@@ -1,10 +1,35 @@
 # HealthGait
 
-> Your gait tells a story. Clinical gait analysis powered by AI — walking speed, ankle power, balance metrics, and fall risk prediction.
+> Your gait tells a story. Apple Watch + Claude AI + physician attestation = clinical-grade gait analysis billable as RTM.
 
 ## What we do
-HealthGait provides clinical-grade gait analysis using phone sensors and AI. Measures walking speed (the "sixth vital sign"), ankle power, stride variability, and balance. Used by clinicians for fall risk assessment, post-surgical recovery tracking, and functional outcome measurement.
+HealthGait turns passive Apple Health data (walking speed, step length, walking asymmetry, double support time, cadence) into clinical-grade gait analysis. Claude AI detects gait deterioration weeks before a fall event. A physician attests via ClinicalSwipe. Result: billable RTM (98975-98981) from data the watch already collects. $94-170/mo per patient.
+
+## Why gait matters
+Walking speed is the "sixth vital sign." Predicts mortality better than blood pressure in 65+. A 0.1 m/s decline = 12% increased mortality risk. Yet <0.2% of eligible patients have RTM billing for gait.
+
+## The pipeline
+1. Apple Watch collects passively (no app needed)
+2. HealthKit → Claude AI via MCP connector
+3. Claude flags trends, generates clinical narrative
+4. Physician attests via ClinicalSwipe
+5. RTM 98975-98981: $94-170/mo per patient
+
+## Ecosystem
+- SurgeonValue: pre/post-op gait for CJR-X quality measures
+- co-op.care: fall risk for aging families
+- FallRisks: home safety + gait prediction
 
 ## Links
 - Website: https://healthgait.com
+- SurgeonValue: https://surgeonvalue.com
+- co-op.care: https://co-op.care
 - SolvingHealth: https://solvinghealth.com
+
+## MCP connector
+```json
+"healthgait": {
+  "command": "npx",
+  "args": ["-y", "@anthropic-ai/mcp-remote", "https://solvinghealth.com/mcp"]
+}
+```
