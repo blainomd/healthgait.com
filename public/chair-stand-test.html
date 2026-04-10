@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#0d7377",
+            "on-secondary-container": "#656464",
+            "outline": "#6e7979",
+            "surface-bright": "#fcf9f8",
+            "on-primary-container": "#a2f5f9",
+            "on-secondary-fixed-variant": "#474747",
+            "tertiary-container": "#317174",
+            "tertiary-fixed": "#aeeef1",
+            "primary-fixed-dim": "#81d4d8",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#81d4d8",
+            "primary-fixed": "#9df0f4",
+            "on-background": "#1c1b1b",
+            "on-primary-fixed": "#002021",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#e4e2e1",
+            "inverse-on-surface": "#f3f0ef",
+            "on-tertiary-container": "#b3f3f6",
+            "inverse-surface": "#313030",
+            "surface": "#fcf9f8",
+            "surface-dim": "#dcd9d9",
+            "tertiary-fixed-dim": "#93d1d4",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#c8c6c6",
+            "surface-tint": "#00696d",
+            "outline-variant": "#bec9c9",
+            "on-primary-fixed-variant": "#004f52",
+            "on-secondary-fixed": "#1b1c1c",
+            "on-tertiary-fixed-variant": "#004f52",
+            "secondary-container": "#e4e2e1",
+            "surface-container-highest": "#e5e2e1",
+            "on-surface-variant": "#3e4949",
+            "tertiary": "#11585b",
+            "surface-variant": "#e5e2e1",
+            "on-primary": "#ffffff",
+            "on-error": "#ffffff",
+            "background": "#fcf9f8",
+            "surface-container": "#f0eded",
+            "surface-container-low": "#f6f3f2",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#1c1b1b",
+            "on-tertiary-fixed": "#002021",
+            "secondary": "#5f5e5e",
+            "error-container": "#ffdad6",
+            "primary": "#00595c",
+            "surface-container-high": "#eae7e7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #bec9c9;
+      border-radius: 10px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f8]/80 dark:bg-slate-950/80 backdrop-blur-md">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-[#00595c] dark:text-[#0d7377] hover:opacity-80 transition-opacity scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="text-xl font-bold tracking-tighter text-[#00595c] dark:text-[#0d7377]">GaitLab</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="Clinician" class="w-full h-full object-cover" data-alt="Professional headshot of a female clinician in a white lab coat with a warm approachable smile in a bright medical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoO8EnE7J7Y6OXETcAZNCzz-dwUQgCawAOamigTdNyqOeYQuPf0PTRrqcvk6GJtWko__i9bIarFPBffwi2Nqje-7RBosEwPbyqTX-ZnXvUxAUkUyut89myCbC8iURGkTEsTzsEsoPnwlm-Tkb11p3dUbr7NP_dVna7LP9q6JKYSq8PpA30PZDumqCdURPmyCoS7ACvlrTG6SXjtOW8p3foyuv90joslqUuuhvCTeeIlN9bYY31HeUgB706E5bChjF4EIrCoGYQEMQ"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-3xl mx-auto min-h-screen">
+<!-- Test Progress -->
+<div class="mb-12">
+<div class="flex justify-between items-end mb-4">
+<div>
+<span class="text-primary font-bold text-xs uppercase tracking-widest font-label block mb-1">Functional Assessment</span>
+<h1 class="text-3xl font-extrabold tracking-tight text-on-surface">Chair Stand Test</h1>
+</div>
+<div class="text-right">
+<span class="text-on-surface-variant text-sm font-medium">Test 1 of 5</span>
+</div>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/5 rounded-full"></div>
+</div>
+</div>
+<!-- Instruction Hero -->
+<section class="mb-12">
+<div class="relative overflow-hidden rounded-full aspect-video mb-8 group">
+<img alt="Test demonstration" class="w-full h-full object-cover" data-alt="Clean clinical environment showing a sturdy wooden chair with a person preparing to stand up, side view, natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg3GnqGrjoSQacvMY4z3FPL3biXlEbWAWOklyo8X98LeZFGKtzr-Pp70mjNQTyywAifv9oCG0cBdjb9HhywAujl4TPJanpZ0IbulFgtZDkpXCNirl9c01WBTWTMHgWwFzCk57JeILSE8Im_Wg7Kvp6_E9_atQ0PUi_NTUN2j0p6e0DoZYZxyWY359di6TvA1G6WUGd79NCn6kWhdjJWDY2RdmW3DKk0gTpxQPdc6P0GR8tewu_SIoiho6Ml2BPBI7SlxS8WwnL3fI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="text-lg font-medium">Stand up from a chair without using your hands</p>
+</div>
+</div>
+</div>
+<!-- Guidance Card -->
+<div class="bg-surface-container-low p-6 rounded-full border border-outline-variant/15">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="accessibility_new">accessibility_new</span>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface mb-1">Clinical Protocol</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Ensure the chair is stable and positioned against a wall. Keep your feet flat on the floor and cross your arms over your chest before attempting to stand.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Options Section -->
+<section class="space-y-4">
+<h2 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-2">Select Outcome</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option Card -->
+<button class="flex items-center gap-4 p-5 bg-surface-container-lowest border border-outline-variant/15 rounded-full text-left transition-all hover:bg-surface-container-low hover:border-primary/30 group">
+<div class="w-6 h-6 rounded-md border-2 border-outline-variant group-hover:border-primary flex items-center justify-center transition-colors">
+<div class="w-3 h-3 bg-primary rounded-sm scale-0 group-focus:scale-100 transition-transform"></div>
+</div>
+<span class="font-medium text-on-surface">Easily</span>
+</button>
+<button class="flex items-center gap-4 p-5 bg-surface-container-lowest border border-outline-variant/15 rounded-full text-left transition-all hover:bg-surface-container-low hover:border-primary/30 group">
+<div class="w-6 h-6 rounded-md border-2 border-outline-variant group-hover:border-primary flex items-center justify-center transition-colors">
+<div class="w-3 h-3 bg-primary rounded-sm scale-0 group-focus:scale-100 transition-transform"></div>
+</div>
+<span class="font-medium text-on-surface">With some difficulty</span>
+</button>
+<button class="flex items-center gap-4 p-5 bg-surface-container-lowest border border-outline-variant/15 rounded-full text-left transition-all hover:bg-surface-container-low hover:border-primary/30 group">
+<div class="w-6 h-6 rounded-md border-2 border-outline-variant group-hover:border-primary flex items-center justify-center transition-colors">
+<div class="w-3 h-3 bg-primary rounded-sm scale-0 group-focus:scale-100 transition-transform"></div>
+</div>
+<span class="font-medium text-on-surface">Need hands to push up</span>
+</button>
+<button class="flex items-center gap-4 p-5 bg-surface-container-lowest border border-outline-variant/15 rounded-full text-left transition-all hover:bg-surface-container-low hover:border-primary/30 group">
+<div class="w-6 h-6 rounded-md border-2 border-outline-variant group-hover:border-primary flex items-center justify-center transition-colors">
+<div class="w-3 h-3 bg-primary rounded-sm scale-0 group-focus:scale-100 transition-transform"></div>
+</div>
+<span class="font-medium text-on-surface">Cannot do it</span>
+</button>
+</div>
+</section>
+<!-- Footer Action -->
+<div class="fixed bottom-0 left-0 w-full bg-[#fcf9f8]/80 backdrop-blur-md p-6 border-t border-outline-variant/10">
+<div class="max-w-3xl mx-auto flex justify-between items-center">
+<button class="text-primary font-semibold py-3 px-6 hover:bg-primary/5 rounded-full transition-colors font-label">
+          Previous Test
+        </button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-10 py-4 rounded-full font-bold shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all flex items-center gap-2">
+          Next
+          <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#fcf9f8]/80 backdrop-blur-md border-t border-[#1c1b1b]/10 z-50">
+<a class="flex flex-col items-center justify-center text-slate-400 font-medium font-inter uppercase tracking-wider text-[11px] scale-90 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00595c] font-bold font-inter uppercase tracking-wider text-[11px] scale-90 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Assess</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 font-medium font-inter uppercase tracking-wider text-[11px] scale-90 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="legend_toggle">legend_toggle</span>
+<span>Results</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 font-medium font-inter uppercase tracking-wider text-[11px] scale-90 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="library_books">library_books</span>
+<span>Resources</span>
+</a>
+</nav>
+</body></html>

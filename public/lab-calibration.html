@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GaitPrecision - Lab Calibration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "outline-variant": "#bec9c9",
+                        "inverse-primary": "#81d4d8",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#9df0f4",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#a2f5f9",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "tertiary": "#11585b",
+                        "primary-fixed-dim": "#81d4d8",
+                        "on-tertiary-container": "#b3f3f6",
+                        "on-surface-variant": "#3e4949",
+                        "surface-tint": "#00696d",
+                        "primary": "#00595c",
+                        "secondary-container": "#e4e2e1",
+                        "on-primary-fixed": "#002021",
+                        "tertiary-fixed-dim": "#93d1d4",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-fixed": "#002021",
+                        "tertiary-container": "#317174",
+                        "secondary": "#5f5e5e",
+                        "on-secondary-container": "#656464",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary-fixed-variant": "#004f52",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed": "#aeeef1",
+                        "inverse-surface": "#313030",
+                        "outline": "#6e7979",
+                        "on-tertiary-fixed-variant": "#004f52"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "monospace": ["JetBrains Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #00595c 0%, #0d7377 100%);
+        }
+        .asymmetric-canvas {
+            padding-left: clamp(1rem, 5vw, 4rem);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f8]/80 dark:bg-slate-950/80 backdrop-blur-md flex justify-between items-center px-6 h-16 w-full max-w-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00595c]" data-icon="settings_input_component">settings_input_component</span>
+<h1 class="text-xl font-bold tracking-tighter text-[#1c1b1b] dark:text-[#fcf9f8]">GaitPrecision</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-monospace text-[10px] tracking-widest text-secondary uppercase opacity-60">System Calibration v2.4.0</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional clinical headshot of a senior physiotherapist with a neutral medical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwPViG-A6Ofays1_mSFDdWQCO6TThJB6TzZ-IvKZ3jvV-EeSuWDr8sLyCT3KQElZObvl9rqGGmmpbjYq1-Un49hpTtIjsux15DWhLDw7ruIULmFSzNH5H3-PhdcNiL7xg3UNsQqMOHG7c1Sz3spaVnjqnING24Id7a8eAEX53w65t9z6FDQjJpBLtVGJeinr-yk8bRC1UZEylIZaRQkddJz3L-vB2Rm6bYHYbmUVT5-zZQ10NtwqaM9AKgVHy9e_2e5AudRGH8ImU"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 min-h-screen asymmetric-canvas max-w-6xl mx-auto">
+<!-- Instructional Header Section -->
+<section class="mb-16">
+<span class="text-primary font-monospace text-xs tracking-[0.2em] uppercase block mb-4">Step 02 — Lab Environment Setup</span>
+<h2 class="text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface leading-[1.1] mb-6">
+                The Precision <br/><span class="text-primary-container">Calibration.</span>
+</h2>
+<p class="text-secondary max-w-xl text-lg leading-relaxed">
+                To ensure clinical-grade data, your environment must meet specific spatial and lighting requirements. Follow the guided sequence to prepare the Gait Lab.
+            </p>
+</section>
+<!-- Calibration Progress Bar (Specialized Medical Component) -->
+<section class="mb-12 pr-6">
+<div class="flex justify-between items-end mb-3">
+<span class="font-monospace text-xs text-primary-container font-semibold uppercase tracking-tighter">Overall Readiness</span>
+<span class="font-monospace text-xs text-on-surface">64% Complete</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-primary w-[64%] rounded-full"></div>
+</div>
+</section>
+<!-- Asymmetric Bento Grid for Onboarding Steps -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 pr-6">
+<!-- Step 1: Device Placement -->
+<div class="md:col-span-8 group">
+<div class="bg-surface-container-lowest p-8 rounded-full border border-outline-variant/15 flex flex-col md:flex-row gap-8 items-center h-full transition-all duration-300 hover:shadow-xl hover:shadow-black/5">
+<div class="w-full md:w-1/2 aspect-square rounded-full overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A clinical smartphone mounted on a tripod at hip height in a minimalist white medical studio space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnJ_aLHPrL6qtaXXn9-04DB2Yu6wNuVFp7wTRmqhl67mu5qBYDEYKgsm28OOUgjbVkPlGlq-1rRFtDskSQ_ZhcsIJDtojI483br5GXez-0NIy17DNkF8vo1ebe-hxRxdF6gZj_Bqu3PUYxJzwloQ7InfdhllnXnASeld0RRSKLzhy0Hjj2SlZRaWV5v-VTvaLhzBgyI1BWFndtuEl3bOUV8PgQYtgxOldBNvCX3W77Fs6F11QFQmQi6NYyn31AUTFoFBo_3D7C5gU"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+<div class="w-full md:w-1/2 space-y-4">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-monospace text-xs">01</span>
+<span class="material-symbols-outlined text-primary" data-icon="height">height</span>
+</div>
+<h3 class="text-2xl font-bold tracking-tight">Placement at Hip Height</h3>
+<p class="text-secondary text-sm leading-relaxed">
+                            Position the primary recording device on a stable tripod. The lens must be level with the patient's iliac crest (hip bone) to ensure accurate skeletal mapping of the lower extremities.
+                        </p>
+<div class="flex items-center gap-2 text-primary font-semibold text-sm pt-4">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+<span>Optimal Height Detected</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 2: Spatial Clearance (The "Data Pulse" styled card) -->
+<div class="md:col-span-4 space-y-6">
+<div class="bg-surface-container-low p-6 rounded-full h-full flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="straighten">straighten</span>
+</div>
+<h3 class="text-xl font-bold mb-2">5 Meter Clearance</h3>
+<p class="text-secondary text-xs leading-relaxed mb-6">
+                            Clear all obstacles to provide a minimum 5-meter walking path. Ensure 1.5 meters of lateral space.
+                        </p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+<div class="flex items-center justify-between mb-2">
+<span class="font-monospace text-[10px] uppercase text-secondary">Path Status</span>
+<span class="font-monospace text-[10px] text-error font-bold">Incomplete</span>
+</div>
+<div class="flex gap-1 h-8 items-end">
+<div class="w-1/5 bg-primary-container/20 h-full"></div>
+<div class="w-1/5 bg-primary-container/40 h-3/4"></div>
+<div class="w-1/5 bg-primary-container h-full"></div>
+<div class="w-1/5 bg-error/40 h-2/4"></div>
+<div class="w-1/5 bg-error h-1/2"></div>
+</div>
+<p class="text-[9px] mt-2 text-on-surface-variant italic">Obstacle detected at 3.2m</p>
+</div>
+</div>
+</div>
+<!-- Step 3: Lighting Check -->
+<div class="md:col-span-4">
+<div class="bg-primary-container text-on-primary-container p-8 rounded-full h-full flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="wb_sunny" data-weight="fill" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+<h3 class="text-xl font-bold mb-3">Luminance Balance</h3>
+<p class="text-on-primary-container/80 text-sm leading-relaxed mb-8">
+                        Avoid backlighting from windows. Ensure even distribution across the capture field.
+                    </p>
+<button class="mt-auto bg-surface-container-lowest text-primary px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors">
+                        Test Lux levels
+                    </button>
+</div>
+</div>
+<!-- Calibration Detail Card -->
+<div class="md:col-span-8">
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-8 rounded-full h-full">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div class="space-y-2">
+<h3 class="text-2xl font-extrabold tracking-tight">Environmental Integrity</h3>
+<p class="text-secondary text-sm">Real-time sensor validation for the current lab space.</p>
+</div>
+<div class="flex gap-4">
+<div class="text-center">
+<div class="font-monospace text-2xl font-bold text-primary">0.02</div>
+<div class="font-monospace text-[9px] uppercase tracking-tighter text-secondary">Vibration (g)</div>
+</div>
+<div class="w-px h-10 bg-outline-variant/20"></div>
+<div class="text-center">
+<div class="font-monospace text-2xl font-bold text-primary">480</div>
+<div class="font-monospace text-[9px] uppercase tracking-tighter text-secondary">Lumen / m²</div>
+</div>
+</div>
+</div>
+<div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low border-l-2 border-primary">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="videocam">videocam</span>
+<p class="text-[10px] font-bold mt-2 uppercase tracking-tight">Camera Optic</p>
+<p class="text-xs text-secondary">Calibrated</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border-l-2 border-primary">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="sensors">sensors</span>
+<p class="text-[10px] font-bold mt-2 uppercase tracking-tight">IMU Sync</p>
+<p class="text-xs text-secondary">Active</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border-l-2 border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="floor">floor</span>
+<p class="text-[10px] font-bold mt-2 uppercase tracking-tight">Floor Level</p>
+<p class="text-xs text-secondary">Pending...</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border-l-2 border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="wifi_tethering">wifi_tethering</span>
+<p class="text-[10px] font-bold mt-2 uppercase tracking-tight">Latent Lag</p>
+<p class="text-xs text-secondary">Testing</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="mt-16 flex flex-col md:flex-row items-center gap-6 pr-6">
+<button class="w-full md:w-auto px-10 py-4 bg-gradient-primary text-on-primary rounded-full font-bold tracking-tight text-lg shadow-2xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                Finalize Lab Setup
+            </button>
+<button class="text-primary font-semibold text-sm hover:underline">
+                Skip for manual override
+            </button>
+</div>
+</main>
+<!-- Navigation Shell Logic (BottomNavBar for mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 bg-[#fcf9f8]/80 backdrop-blur-md border-t border-[#1c1b1b]/15 z-50">
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Patients</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00595c] bg-[#f6f3f2] rounded-xl px-4 py-1">
+<span class="material-symbols-outlined" data-icon="accessibility_new">accessibility_new</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Analyze</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Insights</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">History</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GaitLab | Results Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e5e2e1",
+                    "inverse-on-surface": "#f3f0ef",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "on-tertiary-container": "#b3f3f6",
+                    "inverse-primary": "#81d4d8",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed": "#002021",
+                    "on-surface-variant": "#3e4949",
+                    "on-primary-container": "#a2f5f9",
+                    "primary-container": "#0d7377",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#81d4d8",
+                    "on-surface": "#1c1b1b",
+                    "on-secondary-container": "#656464",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#313030",
+                    "tertiary-container": "#317174",
+                    "secondary": "#5f5e5e",
+                    "on-error-container": "#93000a",
+                    "outline": "#6e7979",
+                    "secondary-fixed": "#e4e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "secondary-container": "#e4e2e1",
+                    "on-primary-fixed": "#002021",
+                    "on-error": "#ffffff",
+                    "primary": "#00595c",
+                    "on-secondary-fixed-variant": "#474747",
+                    "surface-bright": "#fcf9f8",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "tertiary-fixed-dim": "#93d1d4",
+                    "surface-container-low": "#f6f3f2",
+                    "tertiary": "#11585b",
+                    "surface-container-high": "#eae7e7",
+                    "tertiary-fixed": "#aeeef1",
+                    "surface": "#fcf9f8",
+                    "primary-fixed": "#9df0f4",
+                    "surface-tint": "#00696d",
+                    "surface-dim": "#dcd9d9",
+                    "outline-variant": "#bec9c9",
+                    "background": "#fcf9f8",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#004f52",
+                    "on-primary-fixed-variant": "#004f52"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "monospace": ["JetBrains Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .monospace { font-family: 'JetBrains Mono', monospace; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar Execution -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f8]/80 dark:bg-slate-950/80 backdrop-blur-md">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00595c] dark:text-[#0d7377] cursor-pointer hover:opacity-80 transition-opacity">menu</span>
+<h1 class="text-xl font-bold tracking-tighter text-[#00595c] dark:text-[#0d7377]">GaitLab</h1>
+</div>
+<div class="h-8 w-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline-variant/15 cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Clinician Profile" class="h-full w-full object-cover" data-alt="professional portrait of a medical doctor in a clinical setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATlKFWhplFgY0DRI-IJOpyY4Zsy16psxcmniW9k3n5lawo7boWGl-0SStY_FZ2ol8UYFkRUGTpgpRoA5m_lYHXq7u_OFyUG3vGoCymXa9IzK-k1nsVyVzc6YXz77jF57E6HYrsvzPIukPvPA4eXQrv2ROwu_2m8n0GmvHkh_1K0hAuR7KOtzK6b4nvamFVPEGJd3YSDkC-PQ_cWVBU3z4NOpTlxJ3nP65xRnhXpHVbSG7y-mkZ4cpMGYEltI1KlTgxDYI5pgOy7b4"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-screen-xl mx-auto">
+<!-- Dashboard Header -->
+<header class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1">
+<p class="text-xs font-bold uppercase tracking-widest text-primary/60">Session Summary</p>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface">Assessment Results</h2>
+</div>
+<div class="flex items-center gap-2 text-sm font-medium text-secondary">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>Oct 24, 2023</span>
+<span class="mx-2 text-outline-variant">|</span>
+<span class="monospace text-primary font-bold">ID: 8829</span>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Primary Metric: Walking Speed -->
+<section class="md:col-span-5 lg:col-span-4 bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/15 flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs font-bold uppercase tracking-wider text-secondary">Walking Speed</span>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">Optimal</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-7xl font-extrabold tracking-tighter monospace text-on-surface">1.2</span>
+<span class="text-lg font-medium text-secondary">m/s</span>
+</div>
+<p class="mt-4 text-sm text-on-surface-variant leading-relaxed">Your current velocity is within the 85th percentile for your age demographic, showing a 4% improvement.</p>
+</div>
+<!-- Abstract Texture background -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Secondary Metric: Stability Score -->
+<section class="md:col-span-7 lg:col-span-3 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between border border-outline-variant/5">
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-secondary mb-8 block">Stability Score</span>
+<div class="relative flex items-center justify-center py-4">
+<!-- Simplified Radial Progress -->
+<svg class="w-32 h-32 transform -rotate-90">
+<circle class="text-surface-container-highest" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364" stroke-dashoffset="43" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-3xl font-bold monospace">88%</span>
+</div>
+</div>
+</div>
+<div class="mt-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-xs font-semibold text-on-surface-variant">High Precision Gaze</span>
+</div>
+</section>
+<!-- Trends Graph: Signature Component "Data Pulse" -->
+<section class="md:col-span-12 lg:col-span-5 bg-surface-container-low rounded-xl p-8 border border-outline-variant/5">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-sm font-bold uppercase tracking-wider text-secondary">Speed Trends</h3>
+<div class="flex gap-4">
+<button class="text-[10px] font-bold uppercase text-primary border-b-2 border-primary pb-1">Speed</button>
+<button class="text-[10px] font-bold uppercase text-secondary/60 pb-1">Cadence</button>
+</div>
+</div>
+<div class="relative h-48 w-full mt-4">
+<!-- Custom SVG Chart -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 150">
+<!-- Area Fill -->
+<defs>
+<lineargradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#00595c" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#00595c" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,120 Q50,110 100,115 T200,80 T300,90 T400,60 V150 H0 Z" fill="url(#areaGradient)"></path>
+<!-- Data Line -->
+<path d="M0,120 Q50,110 100,115 T200,80 T300,90 T400,60" fill="none" stroke="#00595c" stroke-linecap="round" stroke-width="3"></path>
+<!-- Points -->
+<circle cx="100" cy="115" fill="#00595c" r="4"></circle>
+<circle cx="200" cy="80" fill="#00595c" r="4"></circle>
+<circle cx="400" cy="60" fill="#00595c" r="4"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="flex justify-between mt-4">
+<span class="text-[10px] monospace text-secondary uppercase">Session 1</span>
+<span class="text-[10px] monospace text-secondary uppercase">Session 2</span>
+<span class="text-[10px] monospace text-secondary uppercase">Session 3</span>
+<span class="text-[10px] monospace text-primary font-bold uppercase">Current</span>
+</div>
+</div>
+</section>
+<!-- Personalized Clinical Insights -->
+<section class="md:col-span-12 bg-surface-container-lowest rounded-xl border border-outline-variant/15 overflow-hidden grid md:grid-cols-3">
+<div class="md:col-span-1 p-8 bg-primary text-on-primary flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined mb-4 text-3xl" style="font-variation-settings: 'FILL' 1;">clinical_notes</span>
+<h3 class="text-2xl font-bold tracking-tight mb-2">Clinical Insights</h3>
+<p class="text-primary-fixed-dim text-sm leading-relaxed">Automated analysis synthesized from 4,200 data points collected during your last 20-meter walk.</p>
+</div>
+<button class="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest bg-white/10 hover:bg-white/20 transition-colors py-3 px-6 rounded-lg w-fit">
+                        Download PDF Report
+                    </button>
+</div>
+<div class="md:col-span-2 p-8 grid md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-sm">trending_up</span>
+</div>
+<h4 class="font-bold text-sm text-on-surface">Symmetry Observation</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Your left-side step length has increased by 1.5cm, reducing the bilateral asymmetry identified in the July session. This indicates positive neural adaptation.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+</div>
+<h4 class="font-bold text-sm text-on-surface">Next Steps</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Focus on weight-bearing stability exercises for the right ankle. We recommend increasing your daily stride count by 10% over the next two weeks.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Secondary Information Section -->
+<section class="mt-12 mb-20">
+<h3 class="text-xs font-bold uppercase tracking-widest text-secondary mb-6">Detailed Metrics</h3>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/5">
+<span class="text-[10px] font-bold text-secondary uppercase block mb-1">Cadence</span>
+<span class="text-xl font-bold monospace text-on-surface">104 <span class="text-xs font-medium text-secondary">steps/min</span></span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/5">
+<span class="text-[10px] font-bold text-secondary uppercase block mb-1">Step Length</span>
+<span class="text-xl font-bold monospace text-on-surface">0.68 <span class="text-xs font-medium text-secondary">m</span></span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/5">
+<span class="text-[10px] font-bold text-secondary uppercase block mb-1">Gait Cycle</span>
+<span class="text-xl font-bold monospace text-on-surface">1.12 <span class="text-xs font-medium text-secondary">sec</span></span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/5">
+<span class="text-[10px] font-bold text-secondary uppercase block mb-1">Double Support</span>
+<span class="text-xl font-bold monospace text-on-surface">22 <span class="text-xs font-medium text-secondary">%</span></span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Execution -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#fcf9f8]/80 dark:bg-slate-950/80 backdrop-blur-md z-50 border-t border-[#1c1b1b]/10 shadow-[0_-4px_24px_rgba(28,27,27,0.04)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#0d7377] transition-colors scale-90 active:scale-100" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#0d7377] transition-colors scale-90 active:scale-100" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-wider">Assess</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00595c] dark:text-[#0d7377] font-bold scale-90 active:scale-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">legend_toggle</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-wider">Results</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#0d7377] transition-colors scale-90 active:scale-100" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-wider">Resources</span>
+</a>
+</nav>
+</body></html>

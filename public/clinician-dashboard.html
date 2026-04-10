@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinician Dashboard - GaitPrecision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "outline-variant": "#bec9c9",
+                        "inverse-primary": "#81d4d8",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#9df0f4",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#a2f5f9",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "tertiary": "#11585b",
+                        "primary-fixed-dim": "#81d4d8",
+                        "on-tertiary-container": "#b3f3f6",
+                        "on-surface-variant": "#3e4949",
+                        "surface-tint": "#00696d",
+                        "primary": "#00595c",
+                        "secondary-container": "#e4e2e1",
+                        "on-primary-fixed": "#002021",
+                        "tertiary-fixed-dim": "#93d1d4",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-fixed": "#002021",
+                        "tertiary-container": "#317174",
+                        "secondary": "#5f5e5e",
+                        "on-secondary-container": "#656464",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary-fixed-variant": "#004f52",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed": "#aeeef1",
+                        "inverse-surface": "#313030",
+                        "outline": "#6e7979",
+                        "on-tertiary-fixed-variant": "#004f52"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-24 md:pb-0 md:pl-80">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 md:left-80 right-0 z-50 bg-[#fcf9f8]/80 backdrop-blur-md flex justify-between items-center px-6 h-16 w-full max-w-none">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Clinician profile photo" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a senior physiotherapist in a clean clinical setting, soft natural window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtkR32hjlz9oC3ItK1he8X52FAMvn4sKDyx9FY7GTJlA3mSOuXqP9iYsh722DoyDZhTL7ZKccZrO11PgBeZ0-cSGqenVt_75h7ezZ9WO8M2K-ZjyDE7JjGaiqKPx5tYO4Q--wLFQd200qWbggdSB1BGyQn59u1Mu7XtlmAn4wdVkTcCZm0vrAYaNZzK252HjLVnQNAYG2wIWcIDZRatfIprK6feg3_oIR6ChGXOWdYfzQ_GsPjHaAvLROxS2D6n-Oj4HinLlxLg88"/>
+</div>
+<h1 class="text-xl font-bold tracking-tighter text-[#1c1b1b] font-headline">GaitPrecision</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-[#f6f3f2] rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Side Navigation (Desktop) -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full w-80 bg-[#fcf9f8] flex-col p-4 z-[60] shadow-2xl shadow-black/5">
+<div class="flex flex-col gap-1 mb-8 p-4">
+<h2 class="text-[#00595c] font-black text-2xl font-headline tracking-tighter">GaitPrecision</h2>
+<p class="text-xs text-slate-400 font-medium tracking-widest uppercase">V2.4.0-Enterprise</p>
+</div>
+<div class="px-4 mb-8 flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+<img alt="Dr. Julian Thorne" class="w-10 h-10 rounded-lg object-cover" data-alt="Portrait of a medical professional with graying hair and a confident, kind expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFi-NphuZ11KUXZ8fbIItWzwEY0-ybHw27E9DnTkMi4Lb7NNGGGRadKyeABf1Al1NHNO9574IWBNS5FlEBCG_Ks1fmURvJYKPUo3faZVYZO1iG5RjZoO0JiMToDtq5xu7cgmErsdAgiHY-mZUDmPi2CuIVQU48JDEqwMj5o22qlMRm8Y4BIv3htujpXuLsQ9aBrug7n9Ng-fJ4RtgkAaM-d162LWRKWMxaD-emKq63L0pd9q8NGIusKAQgyFaOcgNvEO1SHUgQ3XY"/>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Dr. Julian Thorne</p>
+<p class="text-xs text-secondary">Senior Physiotherapist</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-[#00595c] text-white rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm">Clinical Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1c1b1b] hover:bg-[#f6f3f2] rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">psychiatry</span>
+<span class="font-medium text-sm">Skeletal Metrics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1c1b1b] hover:bg-[#f6f3f2] rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="font-medium text-sm">Biofeedback Config</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1c1b1b] hover:bg-[#f6f3f2] rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+<span class="font-medium text-sm">Patient Records</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1c1b1b] hover:bg-[#f6f3f2] rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">science</span>
+<span class="font-medium text-sm">Lab Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-6 md:px-12 pb-12 max-w-7xl mx-auto">
+<!-- Header & Quick Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div class="space-y-1">
+<p class="text-sm font-medium text-primary tracking-widest uppercase">Morning, Dr. Thorne</p>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface">Clinical Overview</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-3 bg-surface-container-low text-primary rounded-xl font-semibold text-sm hover:bg-surface-container-high transition-colors active:scale-95">
+                    Invite Patient
+                </button>
+<button class="px-6 py-3 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl font-semibold text-sm shadow-lg shadow-primary/10 hover:brightness-110 transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+                    Start Lab Session
+                </button>
+</div>
+</div>
+<!-- Bento Grid Insights -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<!-- Clinic Progress Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-full p-8 relative overflow-hidden flex flex-col justify-between min-h-[320px] group border border-outline-variant/15">
+<div class="flex justify-between items-start z-10">
+<div>
+<h3 class="text-xl font-bold mb-1">Clinic-wide Progress</h3>
+<p class="text-secondary text-sm">Monthly mobility recovery average</p>
+</div>
+<div class="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        +14.2%
+                    </div>
+</div>
+<!-- Data Pulse Mockup -->
+<div class="absolute bottom-0 left-0 w-full h-48 pointer-events-none opacity-80">
+<svg class="w-full h-full" viewbox="0 0 800 200">
+<defs>
+<lineargradient id="pulseGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#00595c" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#00595c" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,150 Q100,140 200,100 T400,120 T600,60 T800,80 L800,200 L0,200 Z" fill="url(#pulseGradient)"></path>
+<path d="M0,150 Q100,140 200,100 T400,120 T600,60 T800,80" fill="none" stroke="#00595c" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+<div class="z-10 flex gap-12">
+<div>
+<p class="font-monospace text-3xl font-bold">124</p>
+<p class="text-xs text-secondary uppercase tracking-widest font-semibold">Active Sessions</p>
+</div>
+<div>
+<p class="font-monospace text-3xl font-bold">88%</p>
+<p class="text-xs text-secondary uppercase tracking-widest font-semibold">Recovery Rate</p>
+</div>
+</div>
+</div>
+<!-- Focus Item Card -->
+<div class="md:col-span-4 bg-primary text-white rounded-full p-8 flex flex-col justify-center gap-6">
+<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white">notification_important</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold mb-2">Attention Required</h3>
+<p class="text-white/70 text-sm leading-relaxed">4 patients have deviated from their prescribed gait pattern by more than 15% in the last 24 hours.</p>
+</div>
+<button class="text-sm font-bold flex items-center gap-2 group">
+                    Review Patterns
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Patient Database Controls -->
+<div class="flex flex-col md:flex-row gap-4 items-center justify-between mb-8">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-sm placeholder:text-slate-400" placeholder="Search by name, ID or condition..." type="text"/>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar w-full md:w-auto">
+<button class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium whitespace-nowrap">All Patients</button>
+<button class="px-4 py-2 bg-surface-container-low text-secondary rounded-full text-sm font-medium hover:bg-surface-container-high transition-colors whitespace-nowrap">Review Needed</button>
+<button class="px-4 py-2 bg-surface-container-low text-secondary rounded-full text-sm font-medium hover:bg-surface-container-high transition-colors whitespace-nowrap">Post-Op</button>
+<button class="px-4 py-2 bg-surface-container-low text-secondary rounded-full text-sm font-medium hover:bg-surface-container-high transition-colors whitespace-nowrap">Neurological</button>
+<button class="p-2 text-secondary hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Patient Active List -->
+<div class="space-y-4">
+<!-- Patient Row 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-outline-variant/10 hover:shadow-xl hover:shadow-black/5 transition-all duration-300">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden">
+<img alt="Patient photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a middle-aged woman looking calm and professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoo1Nas5o5uG4MnXRRbCoSsf3oFHPbmTLFKlcY1o8s4JyZRhkpzydRBs3iGSa5CQTtU_9GpZCCSTvNNH5tkTOUOpeZp-JT2vCCPcgfixaiHwu0riAu-DtS5ZF88JHAUn-1A3xT1ml-vVWzaMHjKiIAMfYD8muCVQY4VxwbGMDWKzt6WGHlz6mKHbRxOGunVt_JGJYDFd_r4KV-1CwtuSIElyKhTjMHuhG7CgbO1rA7hguefR-VBioT2hSHcvhXcUQwOiaX6S-3zaY"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Eleanor Vance</h4>
+<p class="text-xs text-secondary">ID: GP-8829 • Left Knee Arthroplasty</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-center">
+<p class="text-xs text-secondary uppercase font-bold tracking-widest mb-1">Last Session</p>
+<p class="text-sm font-monospace font-semibold">2h ago</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-secondary uppercase font-bold tracking-widest mb-1">Gait Speed</p>
+<p class="text-sm font-monospace font-semibold">1.1 m/s</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="flex items-center gap-1 text-xs font-bold text-error bg-error-container/30 px-3 py-1 rounded-full mb-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                            Review Needed
+                        </span>
+<p class="text-[10px] text-error/70 font-medium">Deviation in stride length detected</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary/5 rounded-full">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Patient Row 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-outline-variant/10 hover:shadow-xl hover:shadow-black/5 transition-all duration-300">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden">
+<img alt="Patient photo" class="w-full h-full object-cover" data-alt="Portrait of a young athletic man with short hair in a bright studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTDb0Q1dv6ExpPLzGLBueKqPy2xsWd_Un32WN5SA4Vl6e-1JG3PvGZwaf8L_tffiWmVLQcCd5tj4iTGV9OGbW7966l5204TnQQ8iBkmCoEJDNE0qCE7qy07cYpYjfxaLMEz4GKds5xJgCqCp6htTug6oD4BHnDNcpiHebh8slhqYGy_Eri9U3f5BOdh6U77T6-_nBfg_MfwzAkBvtkBtSTs2-5oYALEDB7eIUzthdNvwQ0VzTlZG9NCdiiKRxtPvbtgz7uMQY1d2I"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Marcus Thorne</h4>
+<p class="text-xs text-secondary">ID: GP-9102 • ACL Recovery - Phase 2</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-center">
+<p class="text-xs text-secondary uppercase font-bold tracking-widest mb-1">Last Session</p>
+<p class="text-sm font-monospace font-semibold">Yesterday</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-secondary uppercase font-bold tracking-widest mb-1">Gait Speed</p>
+<p class="text-sm font-monospace font-semibold">1.4 m/s</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="flex items-center gap-1 text-xs font-bold text-[#00595c] bg-primary/10 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                            On Track
+                        </span>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary/5 rounded-full">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Patient Row 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-outline-variant/10 hover:shadow-xl hover:shadow-black/5 transition-all duration-300">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden">
+<img alt="Patient photo" class="w-full h-full object-cover" data-alt="Portrait of an elderly woman smiling warmly, soft daylight on her face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-9c-9X8kk4r2la0tGjqdAD9x1v76Qr64r4ohUCC3H4ywmFTvaAfO-aVTiMBg6PRZOvu16ZBZ8zUFWrtQ8g1d0GvMDadv-pEhHQKHVCj_oXSJR_v2jU5zuYhmv9MvJS0FPxOvupZiM1hQaxjZOMwkSR6lb-EhnJfPK7nxBdAnSZ2z42xFtUh7e7JNbf8zRez9zFcZLxTZnSyPD9TaBPuXvHGWjw88AM-FhhuRS9GlChP4URNrUQadsyWQcssITKXGZ_17O6OqjTWM"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Lydia Chen</h4>
+<p class="text-xs text-secondary">ID: GP-7741 • Chronic Hip Osteoarthritis</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-center">
+<p class="text-xs text-secondary uppercase font-bold tracking-widest mb-1">Last Session</p>
+<p class="text-sm font-monospace font-semibold">3d ago</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-secondary uppercase font-bold tracking-widest mb-1">Gait Speed</p>
+<p class="text-sm font-monospace font-semibold">0.8 m/s</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="flex items-center gap-1 text-xs font-bold text-secondary bg-surface-container-low px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">pause</span>
+                            Stable
+                        </span>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary/5 rounded-full">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#fcf9f8]/80 backdrop-blur-md flex justify-around items-center px-4 pb-4 pt-2 z-50 border-t border-[#1c1b1b]/15 shadow-[0_-4px_24px_rgba(28,27,27,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#00595c] bg-[#f6f3f2] rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Patients</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#0d7377] transition-all" href="#">
+<span class="material-symbols-outlined">accessibility_new</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Analyze</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#0d7377] transition-all" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#0d7377] transition-all" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">History</span>
+</a>
+</nav>
+</body></html>

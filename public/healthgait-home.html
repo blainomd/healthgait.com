@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GaitLab - The Sixth Vital Sign</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#0d7377",
+                    "on-secondary-container": "#656464",
+                    "outline": "#6e7979",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary-container": "#a2f5f9",
+                    "on-secondary-fixed-variant": "#474747",
+                    "tertiary-container": "#317174",
+                    "tertiary-fixed": "#aeeef1",
+                    "primary-fixed-dim": "#81d4d8",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#81d4d8",
+                    "primary-fixed": "#9df0f4",
+                    "on-background": "#1c1b1b",
+                    "on-primary-fixed": "#002021",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#e4e2e1",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-tertiary-container": "#b3f3f6",
+                    "inverse-surface": "#313030",
+                    "surface": "#fcf9f8",
+                    "surface-dim": "#dcd9d9",
+                    "tertiary-fixed-dim": "#93d1d4",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "surface-tint": "#00696d",
+                    "outline-variant": "#bec9c9",
+                    "on-primary-fixed-variant": "#004f52",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-tertiary-fixed-variant": "#004f52",
+                    "secondary-container": "#e4e2e1",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-surface-variant": "#3e4949",
+                    "tertiary": "#11585b",
+                    "surface-variant": "#e5e2e1",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "background": "#fcf9f8",
+                    "surface-container": "#f0eded",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "on-tertiary-fixed": "#002021",
+                    "secondary": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "primary": "#00595c",
+                    "surface-container-high": "#eae7e7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .clinical-gradient {
+            background: linear-gradient(135deg, #00595c 0%, #0d7377 100%);
+        }
+        .glass-header {
+            background: rgba(252, 249, 248, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .data-mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="text-xl font-bold tracking-tighter text-primary">GaitLab</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional clinical avatar of a medical provider in a clean bright setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3AP9WtYqXCXRMNMP3XMqOkgoNKjGbW_9p0SNfhaRNsvaSwG01nJ1n2kQFJy43TeLup06pl2fTgb8uY2T05tWC5qP9DwY8szwEBlOfNKMUbGaQRU_mfaLnxNMzpjWN7f54rA3yaENfR3M6qPMqoW1hLz5b6rHfoIx5blAWGpdlRoxw2REcExcVCmkGcicsNTTLn6CMTCmXTppNyFKOVvEJjc6QO7fGsBecMXE0l2FT35e5OIw7gIonCO1bDbFrR3qESFgKiz-rsaM"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20 px-6 max-w-screen-xl mx-auto space-y-10">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-full p-8 md:p-12 clinical-gradient text-white flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1 space-y-6">
+<span class="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-semibold uppercase tracking-widest">Pioneering Gait Health</span>
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                    Your Gait Tells <br/>a Story.
+                </h2>
+<p class="text-primary-fixed leading-relaxed max-w-md">
+                    Clinical-grade analysis from your pocket. Monitor the most powerful indicator of biological age and functional longevity.
+                </p>
+<div class="pt-4">
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-bold shadow-2xl hover:opacity-90 transition-opacity flex items-center gap-2 group">
+                        Start 30-Second Assessment
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex-1 relative hidden md:block">
+<div class="aspect-square w-full rounded-full border border-white/10 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="Abstract visualization of human motion tracking with neon medical data points and soft teal glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNM531vJn80O82ReVn63VSGvQQ6z0o0pReKt6vb-I5HZM093lmMBxxAZddaJvD7vWUgnY2Ww1YdL-krgn7Xrd7Pj3R0VinjXu4xhK67q8xEqFe8fxAlqxLwb3YqoKMA2HF_R_aTqob7tgJS5_4pV4h9ulCrWV5a4CFtknciZg_D-iGSF0Le1TfnzWjnyG9dUzS27NpeOMoTxO02e1Qu1XTwdV_dNkt1aKFvb45-WJ1Az-Y0Uq1DsDVCRybbLb9bXSHC2vAT3vHWRE"/>
+</div>
+</div>
+</section>
+<!-- The Sixth Vital Sign (Asymmetric Bento) -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<h3 class="text-2xl font-bold tracking-tight text-primary">The Sixth Vital Sign</h3>
+<span class="text-xs font-medium text-secondary uppercase tracking-widest">Clinical Insight</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Data Card -->
+<div class="md:col-span-2 bg-surface-container-low rounded-full p-8 flex flex-col justify-between min-h-[320px]">
+<div class="max-w-md space-y-4">
+<h4 class="text-xl font-bold text-on-surface">Walking Speed vs. Longevity</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                            Medical researchers now consider walking speed as crucial as blood pressure or heart rate. It integrates the health of your nervous, skeletal, and cardiovascular systems into one measurable metric.
+                        </p>
+</div>
+<div class="flex items-center gap-8 mt-8">
+<div>
+<span class="block text-4xl font-extrabold data-mono text-primary">1.2<span class="text-base font-normal"> m/s</span></span>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest">Optimal Range</span>
+</div>
+<div class="h-12 w-px bg-outline-variant/30"></div>
+<div>
+<span class="block text-4xl font-extrabold data-mono text-primary">88<span class="text-base font-normal">%</span></span>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest">Accuracy Rate</span>
+</div>
+</div>
+</div>
+<!-- Visual Callout -->
+<div class="bg-surface-container-highest rounded-full p-8 flex flex-col items-center justify-center text-center space-y-4">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<h4 class="font-bold">Real-time Metrics</h4>
+<p class="text-sm text-on-surface-variant">Analyze cadence, step length, and symmetry instantly.</p>
+</div>
+</div>
+</section>
+<!-- Featured Section: Why Gait Matters -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 py-10 items-center">
+<div class="order-2 md:order-1">
+<div class="aspect-[4/5] rounded-full overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="A person's feet walking gracefully on a minimalist light grey concrete surface with soft morning shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS76_vmobqgO-4Kuhv3rxtq3_ZAfV1RwUMDZIa_ucp03jDyGmWFGHYuyQaXKCAUKHPFDvO-caHykcHkma4dn0P-97Hg0Ep2F_BQQeuGtOH40bn-_-Df9UyFRI6DMWTu5gcInFQdw-sEmMgW-laq0zgGKKFGOZKggjYmNU9AtkipcUhUMWstXZZQDqoSFV3xm39FhV7PbjH5y3KFvG_gO3V84zJo-wS-bJP9vghWHxSnvxFdaReSW4ol-t_efelJx70TYJ-_PWdsg4"/>
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-8 pl-0 md:pl-12">
+<div class="space-y-4">
+<h3 class="text-3xl font-extrabold tracking-tight">Precision at every step.</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                        GaitLab uses advanced computer vision to map your movement profile. By identifying subtle changes over time, we help you and your clinician detect potential health risks long before they manifest as symptoms.
+                    </p>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-4">
+<span class="mt-1 material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<div>
+<span class="font-bold block">Early Risk Detection</span>
+<p class="text-sm text-secondary">Identify mobility declines 5 years earlier than standard tests.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="mt-1 material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<div>
+<span class="font-bold block">Bespoke Recovery</span>
+<p class="text-sm text-secondary">Track postoperative recovery with 0.1s precision.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#fcf9f8]/80 dark:bg-slate-950/80 backdrop-blur-md border-t border-[#1c1b1b]/10 z-50 shadow-[0_-4px_24px_rgba(28,27,27,0.04)]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-[#00595c] dark:text-[#0d7377] font-bold scale-90 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-wider">Home</span>
+</a>
+<!-- Assess -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#0d7377] transition-colors scale-90 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-wider">Assess</span>
+</a>
+<!-- Results -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#0d7377] transition-colors scale-90 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="legend_toggle">legend_toggle</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-wider">Results</span>
+</a>
+<!-- Resources -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#0d7377] transition-colors scale-90 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="library_books">library_books</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-wider">Resources</span>
+</a>
+</nav>
+<!-- FAB (Suppressed on Home according to shell visibility rules if deemed transactional, but kept for main CTA shortcut) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 rounded-full clinical-gradient text-white flex items-center justify-center shadow-2xl z-40 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="add_a_photo" style="font-variation-settings: 'FILL' 1;">add_a_photo</span>
+</button>
+</body></html>
