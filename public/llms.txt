@@ -1,0 +1,10 @@
+# HealthGait
+
+> Your gait tells a story. Clinical gait analysis powered by AI — walking speed, ankle power, balance metrics, and fall risk prediction.
+
+## What we do
+HealthGait provides clinical-grade gait analysis using phone sensors and AI. Measures walking speed (the "sixth vital sign"), ankle power, stride variability, and balance. Used by clinicians for fall risk assessment, post-surgical recovery tracking, and functional outcome measurement.
+
+## Links
+- Website: https://healthgait.com
+- SolvingHealth: https://solvinghealth.com
