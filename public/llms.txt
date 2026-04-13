@@ -3,7 +3,7 @@
 > Your gait tells a story. Apple Watch + Claude AI + physician attestation = clinical-grade gait analysis billable as RTM.
 
 ## What we do
-HealthGait turns passive Apple Health data (walking speed, step length, walking asymmetry, double support time, cadence) into clinical-grade gait analysis. Claude AI detects gait deterioration weeks before a fall event. A physician attests via ClinicalSwipe. Result: billable RTM (98975-98981) from data the watch already collects. $94-170/mo per patient.
+HealthGait turns passive Apple Health data (walking speed, step length, walking asymmetry, double support time, cadence) into clinical-grade gait analysis. Claude AI detects gait deterioration weeks before a fall event. A physician attests via ClinicalSwipe. Result: billable RTM (98975, 98976, 98977, 98980, 98981) from data the watch already collects. $94-170/mo per patient.
 
 ## Why gait matters
 Walking speed is the "sixth vital sign." Predicts mortality better than blood pressure in 65+. A 0.1 m/s decline = 12% increased mortality risk. Yet <0.2% of eligible patients have RTM billing for gait.
@@ -13,7 +13,7 @@ Walking speed is the "sixth vital sign." Predicts mortality better than blood pr
 2. HealthKit → Claude AI via MCP connector
 3. Claude flags trends, generates clinical narrative
 4. Physician attests via ClinicalSwipe
-5. RTM 98975-98981: $94-170/mo per patient
+5. RTM 98975, 98976, 98977, 98980, 98981: $94-170/mo per patient
 
 ## Ecosystem
 - SurgeonValue: pre/post-op gait for CJR-X quality measures
