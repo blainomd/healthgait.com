@@ -3,8 +3,16 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HealthGait — Your Gait Tells a Story</title>
-<meta name="description" content="Clinical-grade gait analysis from your phone. Walking speed is the sixth vital sign. Measure it. Track it. Bill it (RTM 98975, 98976, 98977, 98980, 98981)."/>
+<title>HealthGait — Clinical Gait Analysis &amp; RTM Billing for Clinicians</title>
+<meta name="description" content="Clinical-grade gait analysis from your phone. Walking speed is the sixth vital sign. RTM codes 98975–98981 generate $94–$170/month per patient. Physician-attested reports."/>
+<meta property="og:title" content="HealthGait — Your Gait Tells a Story"/>
+<meta property="og:description" content="Walking speed is the sixth vital sign. Measure it. Track it. Bill it. RTM codes 98975, 98976, 98977, 98980, 98981."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://healthgait.com"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="HealthGait — Clinical Gait Analysis &amp; RTM Billing"/>
+<meta name="twitter:description" content="RTM billing for gait: $94–$170/month per patient. Apple Health + Claude AI. Physician attestation via ClinicalSwipe."/>
+<link rel="canonical" href="https://healthgait.com/"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -98,7 +106,117 @@
     body {
       min-height: max(884px, 100dvh);
     }
+    .faq-item details summary{cursor:pointer;list-style:none}
+    .faq-item details summary::-webkit-details-marker{display:none}
+    .faq-icon{transition:transform 0.2s ease}
+    .faq-item details[open] summary .faq-icon{transform:rotate(45deg)}
   </style>
+
+<!-- Schema.org: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HealthGait",
+  "url": "https://healthgait.com",
+  "description": "Clinical-grade gait analysis. RTM billing codes 98975–98981. Physician-attested reports for home health and outpatient clinicians.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SolvingHealth LLC",
+    "url": "https://solvinghealth.com"
+  }
+}
+</script>
+
+<!-- Schema.org: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What RTM codes apply to gait analysis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Remote Therapeutic Monitoring codes relevant to gait include: 98975 (initial setup and patient education, billed once per episode), 98976 (musculoskeletal monitoring device supply, 30-day period), 98977 (respiratory monitoring device supply), 98980 (first 20 minutes of physician/therapist time), and 98981 (each additional 20 minutes). For a patient with 16+ days of gait data in a calendar month, codes 98975, 98976, 98980, and 98981 can typically be stacked, generating $94–$170 per patient per month depending on payer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who bills for gait assessments — the physician or the therapist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RTM codes 98980 and 98981 can be billed by physicians, physical therapists, occupational therapists, and speech-language pathologists under their own NPI. The billing provider must have a documented plan of care and must personally review the data and communicate with the patient. Incident-to billing under a physician's supervision is also permitted in some practice settings. HealthGait generates physician-ready reports; attestation is completed via ClinicalSwipe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many days of data are required to bill RTM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CMS requires at least 16 days of remote monitoring data within a 30-day period to bill the device supply codes (98976, 98977). The 20-minute time codes (98980, 98981) require documented clinical time spent reviewing data and interacting with the patient or caregiver. Apple Watch and iPhone passively collect walking metrics daily, making 16-day compliance straightforward for active patients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is walking speed and why does it matter clinically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Walking speed (gait velocity) is now recognized as the sixth vital sign. A 2011 JAMA study of 34,485 community-dwelling older adults found that walking speed was a strong predictor of survival: those walking faster than 1.0 m/s had significantly better outcomes than those walking slower than 0.6 m/s. Walking speed integrates the health of the neurological, cardiovascular, musculoskeletal, and pulmonary systems into a single measurable metric."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Medicare reimburse RTM for gait monitoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. CMS finalized RTM reimbursement under the Physician Fee Schedule effective January 2022. RTM codes (98975–98981) are payable by Medicare for musculoskeletal conditions, which encompasses gait impairment, balance disorders, and fall risk. The monitoring device must be FDA-registered or meet the definition of a general wellness device under FDA guidance. Apple Watch is classified as a general wellness device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What gait metrics does HealthGait measure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HealthGait pulls six core metrics from Apple Health: walking speed (m/s), step length (m), step cadence (steps/min), walking asymmetry (%), double support time (%), and stair ascent/descent speed. These map directly to the clinical variables assessed in the Timed Up and Go test, the 10-Meter Walk Test, and the Dynamic Gait Index — the gold-standard clinical assessments for fall risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can HealthGait data be used in an EHR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HealthGait generates structured reports in a format designed for EHR documentation. The SolvingHealth platform exports FHIR-compatible observation resources for walking speed, step length, and symmetry. Integration with Epic, Cerner, athenahealth, and eClinicalWorks is available through the SurgeonValue EMR onboarding pathway."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is HealthGait different from a clinical gait lab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A clinical gait lab uses force plates, motion capture cameras, and electromyography to produce biomechanical analysis at a cost of $800–$3,000 per session. HealthGait uses the accelerometer and gyroscope in an Apple Watch or iPhone to produce continuous, passive gait monitoring at near-zero marginal cost. The tradeoff is precision: a lab provides more granular biomechanical detail, while HealthGait provides longitudinal trend data unavailable in a single lab visit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which patients benefit most from gait monitoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Highest-value populations include post-surgical patients (total knee/hip replacement, spine surgery), stroke and TBI rehabilitation patients, Parkinson's disease and multiple sclerosis patients, older adults with documented fall history, and patients on high-fall-risk medications. For post-surgical patients, gait speed recovery curves are a leading indicator of 90-day readmission risk — directly relevant to CJR-X bundled payment programs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does HealthGait connect to FallRisks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FallRisks assesses the home environment — grab bars, lighting, rugs, and outdoor surfaces. HealthGait assesses the individual's gait — walking speed, symmetry, and step length. Together, they provide a complete picture of fall risk: the environmental component and the physiological component. Families can complete the FallRisks home assessment and share the HealthGait data with their care team through co-op.care."
+      }
+    }
+  ]
+}
+</script>
   </head>
 <body class="bg-surface text-on-surface min-h-screen pb-24">
 <!-- TopAppBar -->
@@ -386,10 +504,207 @@ document.addEventListener('DOMContentLoaded',function(){setTimeout(window.wtCalc
 <span class="text-[11px] font-medium font-inter uppercase tracking-wider">Resources</span>
 </a>
 </nav>
-<!-- FAB (Suppressed on Home according to shell visibility rules if deemed transactional, but kept for main CTA shortcut) -->
+<!-- FAB -->
 <button class="fixed bottom-24 right-6 w-14 h-14 rounded-full clinical-gradient text-white flex items-center justify-center shadow-2xl z-40 active:scale-95 transition-transform">
 <span class="material-symbols-outlined text-2xl" data-icon="add_a_photo" style="font-variation-settings: 'FILL' 1;">add_a_photo</span>
 </button>
+
+<!-- Deep-dive articles + FAQ section -->
+<section class="px-6 pb-32 max-w-screen-xl mx-auto space-y-12 pt-8">
+
+  <!-- Trust signal -->
+  <div style="background:#f0eded;border-radius:16px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+    <span class="material-symbols-outlined" style="color:#00595c;font-size:22px;margin-top:2px;">verified</span>
+    <div>
+      <p style="font-size:13px;font-weight:600;color:#1c1b1b;margin:0 0 4px;">Reviewed by a physician</p>
+      <p style="font-size:12px;color:#3e4949;margin:0;line-height:1.6;">Content reviewed by Josh Emdur, DO — Board-Certified Hospitalist, 50-state licensed. Last reviewed April 2026. Sources: JAMA 2011 (Studenski), CMS Physician Fee Schedule 2022, CDC STEADI, Apple HealthKit documentation.</p>
+    </div>
+  </div>
+
+  <!-- Article header -->
+  <div>
+    <h2 style="font-size:clamp(22px,3vw,30px);font-weight:800;color:#1c1b1b;margin:0 0 8px;">Understanding Gait Analysis &amp; RTM Billing</h2>
+    <p style="font-size:14px;color:#5f5e5e;margin:0;">Clinical evidence, billing guidance, and practical implementation for clinicians and health systems.</p>
+  </div>
+
+  <!-- Articles grid -->
+  <div style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+      <h3 style="font-size:18px;font-weight:700;color:#00595c;margin:0 0 12px;">Walking Speed as the Sixth Vital Sign</h3>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0 0 12px;">A landmark 2011 JAMA study of 34,485 community-dwelling adults (Studenski et al.) found that walking speed was as predictive of survival as age, chronic conditions, smoking history, blood pressure, body mass index, and hospitalization history. Individuals walking faster than 1.0 m/s had survival rates exceeding age-matched norms; those below 0.6 m/s had markedly reduced 10-year survival.</p>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0;">Walking speed integrates the functional state of the neurological, cardiovascular, musculoskeletal, and pulmonary systems into a single measurable number — making it uniquely valuable as a longitudinal health indicator. The NIH Toolbox includes 4-Meter Walk Speed as a standard assessment for this reason. Apple Watch Series 6 and later measures walking speed passively and continuously, generating a clinically meaningful data stream at zero patient burden.</p>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+      <h3 style="font-size:18px;font-weight:700;color:#00595c;margin:0 0 12px;">RTM Billing: Codes, Requirements, and Revenue</h3>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0 0 12px;">CMS finalized Remote Therapeutic Monitoring (RTM) codes in the 2022 Physician Fee Schedule. Unlike Remote Patient Monitoring (RPM), RTM covers non-physiologic data including musculoskeletal function, respiratory function, and therapy adherence — making it directly applicable to gait monitoring. The five core codes are 98975 (setup, once per episode), 98976 (device supply, 30-day), 98977 (respiratory device), 98980 (first 20 min clinical time), and 98981 (additional 20 min).</p>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0;">A patient generating 16+ days of gait data in a calendar month qualifies for the device supply codes. Combined with 20 minutes of physician review and patient communication, the monthly reimbursement per patient ranges from $94 to $170 depending on the payer. At 50 active RTM patients, this represents $4,700–$8,500 in monthly recurring revenue from data that your patients are already generating passively. <a href="https://surgeonvalue.com" style="color:#00595c;">SurgeonValue's RTM billing agent</a> automates the documentation and billing workflow.</p>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+      <h3 style="font-size:18px;font-weight:700;color:#00595c;margin:0 0 12px;">Gait Changes as Early Disease Markers</h3>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0 0 12px;">Multiple studies have identified gait changes as early markers for conditions that appear clinically years later. A 2012 Neurology study found that slower walking speed and shorter stride length precede clinical Alzheimer's disease diagnosis by 5–7 years. Gait variability (inconsistency in step timing) is a sensitive marker for Parkinson's disease progression that outperforms clinical motor scoring on some measures.</p>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0;">For post-surgical patients, gait speed recovery curves are the strongest predictor of 90-day readmission risk in total joint replacement — directly relevant to CJR-X bundled payment program performance. A patient whose walking speed at 14 days post-discharge has not returned to 50% of baseline is at significantly elevated readmission risk. <a href="https://fallrisks.com" style="color:#00595c;">FallRisks home assessment</a> pairs with HealthGait to complete the fall-risk picture.</p>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+      <h3 style="font-size:18px;font-weight:700;color:#00595c;margin:0 0 12px;">Apple HealthKit: The Passive Gait Data Stream</h3>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0 0 12px;">Apple Watch Series 4 and later measures six validated gait metrics using the device's accelerometer and gyroscope: walking speed, step length, step cadence, walking asymmetry, double support time, and stair ascent/descent speed. Apple's validation studies compare these measurements against research-grade motion capture systems with high agreement (ICC &gt; 0.90 for walking speed).</p>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0;">These metrics are stored in Apple Health as HKQuantityType samples and are accessible via the HealthKit API with user consent. HealthGait pulls this data through the <a href="https://solvinghealth.com" style="color:#00595c;">SolvingHealth MCP connector</a>, analyzes 30-day trends, flags clinically significant changes, and generates a physician-ready RTM report. The physician attests via ClinicalSwipe in under 3 minutes.</p>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+      <h3 style="font-size:18px;font-weight:700;color:#00595c;margin:0 0 12px;">Integrating Gait Monitoring with Home Care</h3>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0 0 12px;">Gait monitoring is most impactful when embedded in a care coordination framework. A clinician who identifies gait deterioration in isolation has limited ability to act; a care team that includes a home caregiver, physician, and family coordinator can respond to early warning signals with concrete interventions — medication review, physical therapy referral, or home environment assessment.</p>
+      <p style="font-size:14px;color:#3e4949;line-height:1.75;margin:0;"><a href="https://co-op.care" style="color:#00595c;">co-op.care companion caregivers</a> perform structured gait observations during home visits using the same metrics HealthGait tracks remotely, providing a ground-truth check on passive sensor data. <a href="https://carescircle.com" style="color:#00595c;">CaresCircle family coordination</a> ensures that gait trend alerts reach the right family member immediately, not at the next scheduled call.</p>
+    </div>
+  </div>
+
+  <!-- FAQ section -->
+  <div>
+    <h2 style="font-size:clamp(22px,3vw,30px);font-weight:800;color:#1c1b1b;margin:0 0 20px;">Frequently Asked Questions</h2>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">What RTM codes apply to gait analysis?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            Codes 98975 (setup), 98976 (musculoskeletal device supply, 30-day), 98980 (first 20 min clinical time), and 98981 (additional 20 min) are the core set for gait monitoring. Requires 16+ days of data in a 30-day period and documented clinician review. Combined reimbursement: $94–$170/patient/month depending on payer.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">Who bills for gait assessments — physician or therapist?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            RTM codes 98980 and 98981 can be billed by physicians, physical therapists, occupational therapists, and speech-language pathologists under their own NPI. The billing provider must have a documented plan of care and must personally review data and communicate with the patient. <a href="https://surgeonvalue.com" style="color:#00595c;">SurgeonValue</a> automates the documentation workflow.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">How many days of data are required to bill RTM?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            CMS requires at least 16 days of remote monitoring data within a 30-day period to bill device supply codes (98976, 98977). Apple Watch collects gait data passively every day, making 16-day compliance straightforward for patients who wear the device regularly.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">What is walking speed and why does it matter clinically?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            Walking speed (gait velocity) is the sixth vital sign. A landmark 2011 JAMA study of 34,485 adults found walking speed was a strong independent predictor of survival. It integrates neurological, cardiovascular, musculoskeletal, and pulmonary health into a single measurable metric — faster than drawing labs for many clinical questions.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">Does Medicare reimburse RTM for gait monitoring?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            Yes. CMS finalized RTM reimbursement under the Physician Fee Schedule effective January 2022. RTM codes 98975–98981 are payable by Medicare for musculoskeletal conditions, which includes gait impairment, balance disorders, and fall risk. Apple Watch is classified as a general wellness device under FDA guidance.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">What gait metrics does HealthGait measure?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            Six core metrics from Apple Health: walking speed (m/s), step length (m), step cadence (steps/min), walking asymmetry (%), double support time (%), and stair ascent/descent speed. These map directly to the Timed Up and Go test, 10-Meter Walk Test, and Dynamic Gait Index — the gold-standard clinical fall-risk assessments.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">Can HealthGait data be used in an EHR?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            HealthGait generates structured reports designed for EHR documentation. The SolvingHealth platform exports FHIR-compatible observation resources for walking speed, step length, and symmetry. Integration with Epic, Cerner, athenahealth, and eClinicalWorks is available through the <a href="https://surgeonvalue.com" style="color:#00595c;">SurgeonValue EMR onboarding pathway</a>.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">How does HealthGait connect to FallRisks?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            <a href="https://fallrisks.com" style="color:#00595c;">FallRisks</a> assesses the home environment — grab bars, lighting, and rugs. HealthGait assesses the individual's gait — walking speed, symmetry, and step length. Together they provide a complete fall risk picture: environmental and physiological. Families can share both datasets with their care team through <a href="https://co-op.care" style="color:#00595c;">co-op.care</a>.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">Which patients benefit most from gait monitoring?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            Highest-value populations: post-surgical patients (total joint replacement, spine), stroke/TBI rehabilitation, Parkinson's disease, multiple sclerosis, older adults with documented fall history, and patients on high-fall-risk medications. For post-surgical patients, gait speed recovery is a leading indicator of 90-day readmission — directly relevant to CJR-X bundled payment programs.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(28,27,27,0.04);">
+        <details>
+          <summary style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px;">
+            <span style="font-size:15px;font-weight:600;color:#1c1b1b;">How is HealthGait different from a clinical gait lab?</span>
+            <span class="material-symbols-outlined faq-icon" style="color:#00595c;flex-shrink:0;">add</span>
+          </summary>
+          <div style="padding:0 24px 20px;font-size:14px;color:#3e4949;line-height:1.7;">
+            A clinical gait lab uses force plates and motion capture at $800–$3,000 per session. HealthGait uses Apple Watch accelerometer/gyroscope for continuous passive monitoring at near-zero marginal cost. The tradeoff: a lab provides granular biomechanical detail in one session; HealthGait provides longitudinal trend data across months — which is more clinically relevant for fall prediction and RTM billing.
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Internal ecosystem links -->
+  <div style="background:#f0eded;border-radius:20px;padding:32px;text-align:center;">
+    <h3 style="font-size:18px;font-weight:700;color:#1c1b1b;margin:0 0 8px;">Connected Care Ecosystem</h3>
+    <p style="font-size:14px;color:#5f5e5e;margin:0 0 20px;">HealthGait is one layer of a complete care system. Pair it with home safety assessment, family coordination, and physician oversight.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
+      <a href="https://fallrisks.com" style="background:#fff;color:#00595c;font-size:13px;font-weight:600;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.06);">FallRisks home assessment</a>
+      <a href="https://co-op.care" style="background:#fff;color:#00595c;font-size:13px;font-weight:600;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.06);">co-op.care caregivers</a>
+      <a href="https://surgeonvalue.com" style="background:#fff;color:#00595c;font-size:13px;font-weight:600;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.06);">SurgeonValue RTM billing</a>
+      <a href="https://carescircle.com" style="background:#fff;color:#00595c;font-size:13px;font-weight:600;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.06);">CaresCircle family coordination</a>
+      <a href="https://comfortcard.org" style="background:#fff;color:#00595c;font-size:13px;font-weight:600;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.06);">ComfortCard HSA/FSA tracking</a>
+    </div>
+  </div>
+
+  <p style="text-align:center;font-size:11px;color:#6e7979;">Gait data: Apple HealthKit. RTM billing: CMS Physician Fee Schedule 2022. Clinical evidence: JAMA 2011 (Studenski et al.), Neurology 2012. Not a substitute for medical advice. Content reviewed by Josh Emdur, DO, April 2026.</p>
+</section>
+
 <!-- co-op.care ecosystem footer -->
 <footer style="background:#1B2A4A;padding:48px 24px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
 <div style="max-width:800px;margin:0 auto;">
