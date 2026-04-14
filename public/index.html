@@ -127,10 +127,10 @@
                     Clinical-grade analysis from your pocket. Monitor the most powerful indicator of biological age and functional longevity.
                 </p>
 <div class="pt-4">
-<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-bold shadow-2xl hover:opacity-90 transition-opacity flex items-center gap-2 group">
-                        Start 30-Second Assessment
+<a href="#walktest" class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-bold shadow-2xl hover:opacity-90 transition-opacity inline-flex items-center gap-2 group">
+                        Take the 10-Second Walk Test
                         <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
-</button>
+</a>
 </div>
 </div>
 <div class="flex-1 relative hidden md:block">
@@ -139,6 +139,96 @@
 </div>
 </div>
 </section>
+
+<!-- 10-Second Walk Test (patient-facing self-test) -->
+<section id="walktest" class="rounded-[32px] bg-surface-container-low p-6 md:p-12 space-y-8 scroll-mt-24">
+<div class="flex items-end justify-between gap-4 flex-wrap">
+<div>
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-widest mb-3">Take it yourself</span>
+<h3 class="text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface">The 10-second walk test</h3>
+<p class="text-on-surface-variant max-w-xl mt-2 leading-relaxed">Gait speed below 1.0 m/s predicts hospitalization with ~87% accuracy in older adults. Here is how to measure yours in your kitchen, right now.</p>
+</div>
+<span class="text-xs font-medium text-secondary uppercase tracking-widest hidden md:block">Studenski, JAMA 2011</span>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+<!-- Instructions -->
+<div class="md:col-span-3 bg-surface-container-lowest rounded-[28px] p-6 md:p-8">
+<h4 class="text-sm font-bold uppercase tracking-widest text-primary mb-5">How to measure</h4>
+<ol class="space-y-4">
+<li class="flex gap-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center text-sm">1</span>
+<p class="text-sm text-on-surface leading-relaxed pt-1"><strong class="text-primary">Mark a 6-meter (20-foot) path</strong> on a flat, unobstructed floor. Add 2 meters at each end for acceleration and deceleration.</p>
+</li>
+<li class="flex gap-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center text-sm">2</span>
+<p class="text-sm text-on-surface leading-relaxed pt-1">Walk at your <strong>comfortable, everyday pace</strong> — not fast, not slow. Use any walking aid you normally use.</p>
+</li>
+<li class="flex gap-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center text-sm">3</span>
+<p class="text-sm text-on-surface leading-relaxed pt-1">A helper starts a stopwatch when your <strong>lead foot crosses the start line</strong> and stops it when it crosses the finish.</p>
+</li>
+<li class="flex gap-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center text-sm">4</span>
+<p class="text-sm text-on-surface leading-relaxed pt-1"><strong>Repeat three times</strong> and enter your best time in the calculator. This is the same test used in every major longevity study.</p>
+</li>
+</ol>
+</div>
+
+<!-- Calculator -->
+<div class="md:col-span-2 clinical-gradient rounded-[28px] p-6 md:p-8 text-white flex flex-col">
+<h4 class="text-sm font-bold uppercase tracking-widest text-primary-fixed-dim mb-5">Your gait speed</h4>
+<div class="space-y-4">
+<div>
+<label class="block text-[11px] uppercase tracking-widest text-white/60 font-bold mb-2">Distance</label>
+<div class="flex items-center gap-2 bg-white/10 rounded-xl border border-white/15 px-4 py-3">
+<input id="wt-dist" type="number" value="6" min="1" step="0.1" class="flex-1 bg-transparent text-white text-lg font-bold data-mono outline-none w-full" />
+<span class="text-white/50 text-xs font-bold">meters</span>
+</div>
+</div>
+<div>
+<label class="block text-[11px] uppercase tracking-widest text-white/60 font-bold mb-2">Time</label>
+<div class="flex items-center gap-2 bg-white/10 rounded-xl border border-white/15 px-4 py-3">
+<input id="wt-time" type="number" value="6.0" min="0.1" step="0.1" class="flex-1 bg-transparent text-white text-lg font-bold data-mono outline-none w-full" />
+<span class="text-white/50 text-xs font-bold">seconds</span>
+</div>
+</div>
+<button onclick="window.wtCalc()" class="w-full bg-white text-primary font-bold py-3 rounded-full hover:opacity-90 transition-opacity mt-2">Calculate my score</button>
+</div>
+<div id="wt-result" class="mt-5 p-5 rounded-2xl bg-white/10 border border-white/15 hidden">
+<div class="flex items-baseline gap-2 mb-1">
+<span id="wt-speed" class="text-4xl font-extrabold data-mono text-primary-fixed-dim">1.00</span>
+<span class="text-sm text-white/60 font-bold">m/s</span>
+<span id="wt-mph" class="text-xs text-white/40 ml-auto">2.24 mph</span>
+</div>
+<p id="wt-interp" class="text-sm text-white/85 leading-relaxed mb-3"></p>
+<a href="https://kineticfirst.com" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-primary-fixed-dim border border-primary-fixed-dim/40 rounded-full px-4 py-2 hover:bg-white/10 transition-colors">Get the full analysis at KineticFirst<span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<p class="text-[10px] text-white/40 mt-4 leading-relaxed"><strong class="text-white/60">Thresholds:</strong> &lt;0.6 frailty / 0.6&ndash;1.0 limited mobility / 1.0&ndash;1.2 preserved / &gt;1.2 robust</p>
+</div>
+</div>
+</section>
+
+<script>
+window.wtCalc=function(){
+  var d=parseFloat(document.getElementById('wt-dist').value);
+  var t=parseFloat(document.getElementById('wt-time').value);
+  if(!d||!t||d<=0||t<=0)return;
+  var s=d/t,mph=s*2.23694;
+  var r=document.getElementById('wt-result');
+  document.getElementById('wt-speed').textContent=s.toFixed(2);
+  document.getElementById('wt-mph').textContent=mph.toFixed(2)+' mph';
+  var msg='';
+  if(s<0.6){msg='<strong>Elevated risk.</strong> Speeds under 0.6 m/s are linked with frailty, fall risk, and higher 1-year hospitalization. Targeted strength and balance training can meaningfully improve gait speed within 8&ndash;12 weeks.';}
+  else if(s<1.0){msg='<strong>Limited community mobility.</strong> You can walk, but a timed crosswalk or stairs under load may be challenging. This range predicts hospitalization with ~87% accuracy in older adults.';}
+  else if(s<1.2){msg='<strong>Preserved function.</strong> You are in the range associated with independent community mobility and lower adverse event risk. Keep walking daily and track trends — they matter more than any single measurement.';}
+  else{msg='<strong>Robust.</strong> Speeds above 1.2 m/s are linked with the lowest mortality and disability in long-term studies. HealthGait can track symmetry, cadence, and ground contact time — the next biomarkers beyond speed alone.';}
+  document.getElementById('wt-interp').innerHTML=msg;
+  r.classList.remove('hidden');
+};
+document.addEventListener('DOMContentLoaded',function(){setTimeout(window.wtCalc,250);});
+</script>
+
 <!-- The Sixth Vital Sign (Asymmetric Bento) -->
 <section class="space-y-6">
 <div class="flex justify-between items-end">
