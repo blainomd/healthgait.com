@@ -1,1 +1,13 @@
-{"cleanUrls":true,"trailingSlash":false}
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/privacy", "destination": "https://solvinghealth.com/privacy", "permanent": true },
+    { "source": "/terms", "destination": "https://solvinghealth.com/legal", "permanent": true },
+    { "source": "/hipaa", "destination": "https://solvinghealth.com/legal", "permanent": true },
+    { "source": "/legal", "destination": "https://solvinghealth.com/legal", "permanent": true },
+    { "source": "/security", "destination": "https://solvinghealth.com/legal", "permanent": true },
+    { "source": "/about", "destination": "/", "permanent": true },
+    { "source": "/contact", "destination": "/", "permanent": true }
+  ]
+}
